@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Street Estacionamentos</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        margin: 0;
+        padding: 0px;
+    }
+
+    header {
+        position: relative;
+        background-color: #023681;
+        color: white;
+        padding: 20px 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
+
+    .barra-laranja {
+        background-color: #ff9000; 
+        height: 9px;               
+        width: 100%;  
+        margin-top: 10px;     
+        margin-bottom: 30px; 
+    }
+
+    .barra-laranja-baixo {
+        margin: 10px;   
+        height: 9px;
+        background-color: #ff9000;
+        width: 100%;
+    }
+
+    .conteudo-header {
+        position: relative;
+        width: 1000px;        
+        margin: 0 auto;        
+    }
+
+    .carro-img {
+        position: absolute;
+        top: -5px;
+        left: 466px;
+        width: 170px;
+        z-index: 0;
+    }
+
+    header > .conteudo-header > div:first-child {
+    padding-left: 100px; 
+    }
+
+    .logo-esquerda {
+        position: absolute;
+        top: -14px;
+        left: 246px;
+        width: 90px;
+        z-index: 0;
+    }
+
+    .logo-direita {
+        position: absolute;
+        top: 60px;
+        left: 1077px;
+        width: 90px;
+        z-index: 0;
+    }
+
+    .titulo-central {
+        display: inline-block;
+        text-align: left;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .autor {
+      position: absolute;
+      bottom: 0px;
+      left: -160px;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        padding: 0 40px;  
+    }
+
+    .box {
+        background-color: #e5e5e5;
+        border: 2px solid #c0bfbf;
+        border-radius: 8px;
+        padding: 15px;
+        width: 300px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .box-topo {
+        background-color: #023681;
+        padding: 4px 0; 
+        border-radius: 6px 6px 6px 6px;
+        margin: -15px -15px 10px -15px; 
+        text-align: center; 
+    }
+
+    .box-topo h2 {
+        margin: 0;
+        color: white;
+        font-size: 12px;
+        font-weight: normal;
+        text-align: center;
+        position: relative;
+        top: 4px; 
+        padding: -10px;
+    }
+
+    .box h2 {
+        font-size: 18px; 
+        font-weight: normal; 
+        margin-top: 0;       
+        margin-bottom: 10px; 
+        color: #ffffff;
+    }
+
+    .box label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .box input {
+        width: 100%;            
+        box-sizing: border-box;  
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        font-size: 14px;
+        display: block;          
+    }
+
+    .box button {
+      padding: 10px;
+      background-color: #033174;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .box button:hover {
+      background-color: #555;
+    }
+
+    .image-placeholder {
+      border: 2px dashed #ccc;
+      height: 100px;
+      margin-top: 10px;
+      text-align: center;
+      line-height: 100px;
+      color: #999;
+      font-style: italic;
+    }
+
+    .image-placeholder {
+        border: 2px dashed #ccc;
+        height: 100px;
+        margin-top: 10px;
+        text-align: center;
+        line-height: 100px;
+        color: #999;
+        font-style: italic;
+    }
+
+.pequeno-topo {
+    height: 220px;
+    }
+
+.saida-menor {
+    height: 145px; 
+    }
+
+.linha {
+    display: flex;
+    justify-content: center;
+    gap: 120px;  
+    margin-bottom: 30px;
+    }
+
+  footer {
+    position: relative;
+    background-color: #023681;
+    color: white;
+    padding: 20px 0;
+    margin: 30px 0 0 0; 
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    clear: both; 
+}
+
+.conteudo-footer {
+  position: relative;
+  width: 1000px;
+}
+
+.logo-esquerda-footer {
+  position: absolute;
+  top: -14px;
+  left: 246px;
+  width: 90px;
+  z-index: 0;
+}
+
+.logo-direita-footer {
+  position: absolute;
+  top: 60px;
+  left: 1077px;
+  width: 90px;
+  z-index: 0;
+}
+
+.titulo-central-footer {
+  display: inline-block;
+  text-align: left;
+}
+
+footer {
+  margin: 0;  /* Remove a margem de cima */
+  padding: 20px 0;
+}
+
+.autor-footer {
+  position: absolute;
+  bottom: 0px;
+  left: -160px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="conteudo-header">
+    <img src="carro.png" alt="Carro" class="carro-img">
+    <img src="logo.png" alt="Logo" class="logo-esquerda">
+    <img src="etec.png" alt="Etec" class="logo-direita">
+
+    <div class="titulo-central">
+    <h1 style="color: #ff9000; margin: 0;">STREET</h1>
+    <h1 style="margin: 0;">ESTACIONAMENTOS</h1>
+    </div>
+
+    <div class="autor"><i>FEITO POR: LAURA ALVES</i></div>
+  </div>
+</header>
+
+<div class="barra-laranja"></div>
+
+<div class="container">
+  <!-- Linha 1 -->
+  <div class="linha">
+    <!-- Registro de Entrada -->
+    <div class="box pequeno-topo">
+      <div class="box-topo">
+        <h2>Registro de Entrada</h2>
+      </div>
+      <label>Modelo do Veículo:</label>
+      <input type="text" placeholder="Registrar modelo do veículo">
+      <label>Placa do Veículo:</label>
+      <input type="text" placeholder="Registrar placa do veículo">
+      <button>Registrar</button>
+    </div>
+
+    <!-- Registro de Saída -->
+    <div class="box pequeno-topo saida-menor">
+      <div class="box-topo">
+        <h2>Registro de Saída</h2>
+      </div>
+      <label>Placa do Veículo:</label>
+      <input type="text" placeholder="Registrar placa do veículo">
+      <button>Registrar</button>
+    </div>
+  </div>
+
+  <!-- Linha 2 -->
+  <div class="linha">
+    <!-- Atualizar Dados -->
+    <div class="box">
+      <div class="box-topo">
+        <h2>Atualizar Dados</h2>
+      </div>
+      <label>Placa do Veículo:</label>
+      <input type="text" placeholder="Insira a placa atual do veículo">
+      <label>Modelo do Veículo:</label>
+      <input type="text" placeholder="Insira o novo modelo do veículo">
+      <label>Placa do Veículo:</label>
+      <input type="text" placeholder="Insira a nova placa do veículo">
+      <button>Atualizar</button>
+    </div>
+
+    <!-- Tempo de Permanência -->
+        <div class="box pequeno-topo saida-menor">
+      <div class="box-topo">
+        <h2>Tempo de Permanência</h2>
+      </div>
+      <label>Placa do Veículo:</label>
+      <input type="text" placeholder="Insira a placa do veículo">
+      <button>Consultar</button>
+    </div>
+  </div>
+
+  <!-- Linha 3 -->
+  <div class="linha">
+    <!-- Verificar Veículo -->
+    <div class="box">
+      <div class="box-topo">
+        <h2>Verificar Veículo</h2>
+      </div>
+      <label>Placa do Veículo:</label>
+      <input type="text" placeholder="Insira a placa do veículo">
+      <button>Verificar</button>
+    </div>
+
+    <!-- Cancelar Registro -->
+    <div class="box">
+      <div class="box-topo">
+        <h2>Cancelar Registro</h2>
+      </div>
+      <label>Placa do Veículo:</label>
+      <input type="text" placeholder="Insira a placa do veículo">
+      <button>Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div class="barra-laranja-baixo"></div>
+
+<footer>
+  <div class="conteudo-footer">
+</footer>
+
+</body>
+</html>
