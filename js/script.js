@@ -52,7 +52,7 @@ document.getElementById('btnRegistrarSaida').addEventListener('click', () => {
     return res.json();
   })
   .then(data => mostrarResultado('Saída registrada com sucesso!'))
-  .catch(() => mostrarResultado('Não foi possível registrar saída.'));
+  .catch(() => mostrarResultado('O veículo não existe.'));
 });
 
  // Atualizar Dados
@@ -99,7 +99,7 @@ document.getElementById('btnConsultarTempo').addEventListener('click', () => {
     return res.json();
   })
   .then(data => mostrarResultado(`Tempo de permanência: ${data.parkedTime.toFixed(2)}`))
-  .catch(() => mostrarResultado('Não foi possível consultar o tempo de permanência.'));
+  .catch(() => mostrarResultado('O veículo não existe.'));
 });
 
 // Verificar Veículo
@@ -146,7 +146,7 @@ document.getElementById('btnVerificar').addEventListener('click', () => {
         return res.json();
       })
       .then(data => mostrarResultado('Registro cancelado com sucesso!'))
-      .catch(() => mostrarResultado('Não foi possível cancelar registro.'));
+      .catch(() => mostrarResultado('O veículo não existe.'));
   });
 
 });
